@@ -4,6 +4,7 @@ import MenuIcon from "@material-ui/icons/Menu"
 import CloseIcon from "@material-ui/icons/Close"
 import { selectCars } from "../features/car/carSlice"
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 
 function Header() {
   const [burgerStatus, setBurgerStatus] = useState(false) // closed
@@ -12,20 +13,20 @@ function Header() {
   console.log(cars)
   return (
     <Container>
-      <a href="#">
+      <Link to="#">
         <img src="/images/logo.svg" alt="" />
-      </a>
+      </Link>
       <Menu>
         {cars &&
           cars.map((car, index) => (
-            <a key={index} href="#">
+            <Link key={index} to="#">
               {cars}{" "}
-            </a>
+            </Link>
           ))}
       </Menu>
       <RightMenu>
-        <a href="#">Shop</a>
-        <a href="#">Tesla Account</a>
+        <Link to="#">Shop</Link>
+        <Link to="#">Tesla Account</Link>
         <CustomMenu onClick={() => setBurgerStatus(true)} />
       </RightMenu>
       <BurgerNav show={burgerStatus}>
@@ -35,47 +36,47 @@ function Header() {
         {cars &&
           cars.map((car, index) => (
             <li>
-              <a key={index} href="#">
+              <Link key={index} to="#">
                 {" "}
                 {car}
-              </a>
+              </Link>
             </li>
           ))}
         <li>
-          <a href="#"> Existing Inventory</a>
+          <Link to="#"> Existing Inventory</Link>
         </li>
         <li>
-          <a href="#"> Used Inventory</a>
+          <Link to="#"> Used Inventory</Link>
         </li>
         <li>
-          <a href="#"> Roadster</a>
+          <Link to="#"> Roadster</Link>
         </li>
         <li>
-          <a href="#"> Semi</a>
+          <Link to="#"> Semi</Link>
         </li>
         <li>
-          <a href="#"> Trade-in</a>
+          <Link to="#"> Trade-in</Link>
         </li>
         <li>
-          <a href="#"> Charging</a>
+          <Link to="#"> Charging</Link>
         </li>
         <li>
-          <a href="#"> Powerwall</a>
+          <Link to="#"> Powerwall</Link>
         </li>
         <li>
-          <a href="#"> Commercial Energy</a>
+          <Link to="#"> Commercial Energy</Link>
         </li>
         <li>
-          <a href="#"> Utilities</a>
+          <Link to="#"> Utilities</Link>
         </li>
         <li>
-          <a href="#"> Find Us</a>
+          <Link to="#"> Find Us</Link>
         </li>
         <li>
-          <a href="#"> Support</a>
+          <Link to="#"> Support</Link>
         </li>
         <li>
-          <a href="#"> Investor Relations</a>
+          <Link to="#"> Investor Relations</Link>
         </li>
       </BurgerNav>
     </Container>
